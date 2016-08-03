@@ -250,3 +250,7 @@ paket-files/
 # JetBrains Rider
 .idea/
 *.sln.iml
+
+src/ui/app/**/*.js
+src/ui/app/**/*.map
+src/ui/typings/
