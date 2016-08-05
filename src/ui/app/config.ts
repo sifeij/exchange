@@ -1,0 +1,1 @@
+export const BASE_URI: string = "http://localhost:5000";

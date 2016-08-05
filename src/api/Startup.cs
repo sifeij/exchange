@@ -40,6 +40,7 @@ namespace exchange
             app.UseDefaultFiles();
             app.UseStaticFiles();
             
+            app.UseMvc();
         }
     }
 }
