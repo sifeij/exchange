@@ -1,4 +1,1 @@
-body {
-    background-color: black;
-    color: white;
-}
+@import "node_modules/bootstrap/dist/css/bootstrap.css"

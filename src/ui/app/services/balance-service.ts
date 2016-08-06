@@ -20,7 +20,14 @@ export class BalanceService {
 
     private extractData(res: Response) {
         let body = res.json();
-        return body.data || { };
+
+        var result = [];
+        var keys = Object.keys(body);
+        keys.forEach(key => {
+            result.push({ name: key, amount: body[key] });
+        });
+
+        return result || [];
     }
 
     private handleError(error: any, caught: any) {
