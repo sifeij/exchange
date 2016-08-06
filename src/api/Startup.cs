@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 
@@ -20,6 +21,7 @@ namespace exchange
         // For more information on how to configure your application, visit http://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddCors();
             services.AddSingleton<IBalanceRepository, InMemoryBalanceRepository>();
             services.AddTransient<IBalanceService, BalanceService>();
             services.AddMvc();
@@ -37,6 +39,11 @@ namespace exchange
                 app.UseDeveloperExceptionPage();
             }
 
+            app.UseCors(builder => {
+                builder.AllowAnyHeader();
+                builder.AllowAnyMethod();
+                builder.WithOrigins(new [] { "http://localhost:3000" });
+            });
             app.UseDefaultFiles();
             app.UseStaticFiles();
             
