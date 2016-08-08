@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { CORE_DIRECTIVES }   from '@angular/common';
+import { CORE_DIRECTIVES } from '@angular/common';
+import { NgForm } from '@angular/forms';
 
 import { Transaction }        from '../models/transaction';
 import { TransactionService } from '../services/transaction-service';
@@ -12,16 +13,18 @@ import { TransactionService } from '../services/transaction-service';
 })
 export class Deposit {
 
-  public currency: string;
-  public amount: number;
-  public currencies: string[] = ['USD', 'BTC'];
+  currency: string;
+  amount: number;
+  currencies: string[] = ['USD', 'BTC'];
+  submitted = false;
   
   constructor(private service: TransactionService) {
 
   }
 
-  public deposit(): void {
-      this.service
+  onSubmit() {
+    this.service
           .deposit(this.currency, this.amount);
+    this.submitted = true;
   }
 }

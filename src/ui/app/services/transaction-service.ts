@@ -9,6 +9,7 @@ import { Transaction } from '../models/transaction';
 
 @Injectable()
 export class TransactionService {
+
     constructor(private http: Http) {}
 
     get(): Observable<Transaction[]> {
@@ -25,7 +26,7 @@ export class TransactionService {
     }
 
     deposit(currency: string, amount: number): Observable<Transaction> {
-        let url = `${this.transactionUrl}/{currency}`;
+        let url = `${this.transactionUrl}/${currency}`;
         let transaction: Transaction = {
             currency: currency, amount: amount
         }

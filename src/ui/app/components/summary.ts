@@ -12,13 +12,13 @@ import { TransactionService } from '../services/transaction-service';
 })
 export class Summary implements OnInit {
 
-  public transactions: Transaction[];
+  transactions: Transaction[];
 
   constructor(private service: TransactionService) {
 
   }
 
-  public ngOnInit(): void {
+  ngOnInit(): void {
      this.service
          .get()
          .subscribe(res => this.transactions = res);
