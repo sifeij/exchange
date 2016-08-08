@@ -1,14 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Builder;
+﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Cors;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
-
 
 namespace exchange
 {
@@ -22,8 +15,8 @@ namespace exchange
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddCors();
-            services.AddSingleton<IBalanceRepository, InMemoryBalanceRepository>();
-            services.AddTransient<IBalanceService, BalanceService>();
+            services.AddSingleton<ITransactionRepository, InMemoryTransactionRepository>();
+            services.AddTransient<ITransactionService, TransactionService>();
             services.AddMvc();
         }
 
