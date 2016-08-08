@@ -1,0 +1,20 @@
+<div class="col-xs-10 col-xs-offset-1">
+    <form>
+      <div class="form-group">
+        <label for="currency">Currency</label>
+        <select class="form-control" required
+            [(ngModel)]="currency" name="currency">
+            <option *ngFor="let c of currencies" [value]="c">{{ c }}</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="amount">Amount</label>
+        <input type="text" class="form-control" 
+                [(ngModel)]="amount" name="amount" required>
+      </div>
+      <button type="submit" class="btn btn-default">Deposit</button>
+    </form>
+
+</div>
+
+

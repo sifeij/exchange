@@ -1,0 +1,5 @@
+<table class="col-xs-10 col-xs-offset-1" *ngIf="!!products && products.length>0">
+    <tr *ngFor="let product of products">
+    <td>{{ product.name }}</td><td class="pull-right">{{ product.amount }}</td>
+    </tr>
+</table>

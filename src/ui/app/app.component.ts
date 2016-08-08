@@ -1,24 +1,16 @@
-import { Component, OnInit } from '@angular/core';
-import { CORE_DIRECTIVES } from '@angular/common';
+import { Component } from '@angular/core';
 
-import { Product } from './models/product';
-import { BalanceService } from './services/balance-service';
+import { Summary } from './components/summary';
+import { Deposit } from './components/deposit';
 
 @Component({
   selector: 'exchange-app',
   templateUrl: 'app/app.component.html',
-  providers: [ BalanceService ],
-  directives: [ CORE_DIRECTIVES ]
+  directives: [ Summary, Deposit ]
 })
-export class AppComponent implements OnInit {
-  products: Product[];
-  constructor(private service: BalanceService) {
+export class AppComponent {
 
-  }
+  constructor() {
 
-  public ngOnInit(): void {
-     this.service
-         .getBalance()
-         .subscribe(products => this.products = products);
   }
 }
