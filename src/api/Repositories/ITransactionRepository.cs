@@ -8,7 +8,8 @@ namespace exchange.Repositories
     public interface ITransactionRepository
     {
         IEnumerable<Transaction> Get();
-        Decimal GetByCurrency(String currency);
+        Decimal Get(String currency);
+        IEnumerable<Transaction> GetSummary();
         Transaction Add(Transaction transaction);
     }
 }

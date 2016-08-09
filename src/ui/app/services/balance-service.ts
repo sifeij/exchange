@@ -9,6 +9,9 @@ import { Product } from '../models/product';
 
 @Injectable()
 export class BalanceService {
+
+    private balanceUrl = `${BASE_URI}/api/balance`;
+
     constructor(private http: Http) {}
 
     getBalance(): Observable<Product[]> {
@@ -21,8 +24,8 @@ export class BalanceService {
     private extractData(res: Response) {
         let body = res.json();
 
-        var result = [];
-        var keys = Object.keys(body);
+        let result = [];
+        let keys = Object.keys(body);
         keys.forEach(key => {
             result.push({ name: key, amount: body[key] });
         });
@@ -36,6 +39,4 @@ export class BalanceService {
         console.error(errMsg);
         return Observable.throw(errMsg);
     }
-
-    private balanceUrl = `${BASE_URI}/api/balance`;
 }

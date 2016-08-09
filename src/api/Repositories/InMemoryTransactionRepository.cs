@@ -11,17 +11,26 @@ namespace exchange.Repositories
         public IEnumerable<Transaction> Get()
         {
             return _transactions;
-                //.GroupBy(c => c.Currency)
-                //.Select(group => group.Sum(item => item.Amount));
         }
 
-        public Decimal GetByCurrency(String currency)
+        public Decimal Get(String currency)
         {
             if (_transactions == null) return 0m;
 
             return _transactions
                         .Where(c => c.Currency == currency)
                         .Sum(c => c.Amount);
+        }
+
+        public IEnumerable<Transaction> GetSummary()
+        {
+            return _transactions
+                        .GroupBy(c => c.Currency)
+                        .Select(g => new Transaction()
+                        {
+                            Currency = g.Key,
+                            Amount = g.Sum(t => t.Amount)
+                        });
         }
 
         public Transaction Add(Transaction transaction)

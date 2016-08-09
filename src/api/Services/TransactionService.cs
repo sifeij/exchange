@@ -15,13 +15,17 @@ namespace exchange.Services
 
         public IEnumerable<Transaction> Get()
         {
-            var result = _transactionRepo.Get();
-            return result;
+            return _transactionRepo.Get();
         }
 
-        public Decimal GetByCurrency(String currency)
+        public Decimal Get(String currency)
         {
-            return _transactionRepo.GetByCurrency(currency);
+            return _transactionRepo.Get(currency);
+        }
+
+        public IEnumerable<Transaction> GetSummary()
+        {
+            return _transactionRepo.GetSummary();
         }
 
         public Transaction Add(Transaction transaction)

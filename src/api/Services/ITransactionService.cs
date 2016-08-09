@@ -8,7 +8,8 @@ namespace exchange.Services
     public interface ITransactionService
     {
         IEnumerable<Transaction> Get();
-        Decimal GetByCurrency(String currency);
+        Decimal Get(String currency);
+        IEnumerable<Transaction> GetSummary();
         Transaction Add(Transaction transaction);
     }
 }

@@ -1,8 +1,22 @@
-<table class="col-xs-10 col-xs-offset-1" *ngIf="!!products && products.length>0">
-    <tr *ngFor="let product of products">
-    <td>{{ product.name }}</td><td class="pull-right">{{ product.amount }}</td>
-    </tr>
-</table>
-<div class="alert alert-info">
-  <strong>Info!</strong> Please make a deposit.
+<div class="alert alert-info" *ngIf="!summary || summary.length===0">
+    <strong>Info!</strong> Please make a deposit.
+</div>
+<div class="container">
+    Summary:
+    <table class="col-xs-10 col-xs-offset-1" *ngIf="!!summary && summary.length>0">
+        <tr *ngFor="let item of summary">
+        <td>{{ item.currency | uppercase }}</td>
+        <td class="pull-right">{{ item.amount | number:'.3-3' }}</td>
+        </tr>
+    </table>
+</div>
+<div class="container">
+    Details:
+    <table class="col-xs-10 col-xs-offset-1" *ngIf="!!transactions && transactions.length>0">
+        <tr *ngFor="let transaction of transactions">
+        <td>{{ transaction.currency | uppercase }}</td>
+        <td>{{ transaction.when | date:"MM/dd/yy hh:mm:ss" }}</td>
+        <td class="pull-right">{{ transaction.amount | number:'.3-3' }}</td>
+        </tr>
+    </table>
 </div>

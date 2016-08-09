@@ -6,5 +6,6 @@ namespace exchange.Models
     {
         public String Currency { get; set; }
         public Decimal Amount { get; set; }
+        public DateTime When { get; set; } = DateTime.Now;
     }
 }

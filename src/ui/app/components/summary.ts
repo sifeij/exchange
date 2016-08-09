@@ -13,6 +13,7 @@ import { TransactionService } from '../services/transaction-service';
 export class Summary implements OnInit {
 
   transactions: Transaction[];
+  summary: Transaction[];
 
   constructor(private service: TransactionService) {
 
@@ -22,5 +23,10 @@ export class Summary implements OnInit {
      this.service
          .get()
          .subscribe(res => this.transactions = res);
+
+    this.service
+         .getSummary()
+         .subscribe(res => this.summary = res);
   }
+
 }
