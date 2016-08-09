@@ -2,22 +2,22 @@
     <strong>Info!</strong> Please make a deposit.
 </div>
 <div class="container">
-    Summary:
+    <div>Summary:</div>
     <table class="col-xs-10 col-xs-offset-1" *ngIf="!!summary && summary.length>0">
         <tr *ngFor="let item of summary">
-        <td>{{ item.currency | uppercase }}</td>
-        <td class="pull-right">{{ item.amount | number:'.3-3' }}</td>
+            <td>{{ item.currency | uppercase }}</td>
+            <td class="pull-right">{{ item.amount | number:'.3-3' }}</td>
         </tr>
     </table>
 </div>
 <hr>
 <div class="container">
-    Details:
+    <div>Details:</div>
     <table class="col-xs-10 col-xs-offset-1" *ngIf="!!transactions && transactions.length>0">
         <tr *ngFor="let transaction of transactions">
-        <td>{{ transaction.currency | uppercase }}</td>
-        <td>{{ transaction.when | date:"MM/dd/yy hh:mm:ss" }}</td>
-        <td class="pull-right">{{ transaction.amount | number:'.3-3' }}</td>
+            <td>{{ transaction.currency | uppercase }}</td>
+            <td>{{ transaction.when | date:"MM/dd/yy hh:mm:ss" }}</td>
+            <td class="pull-right">{{ transaction.amount | number:'.3-3' }}</td>
         </tr>
     </table>
 </div>

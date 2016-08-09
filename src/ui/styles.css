@@ -1,1 +1,24 @@
-@import "node_modules/bootstrap/dist/css/bootstrap.css"
+@import "node_modules/bootstrap/dist/css/bootstrap.css";
+
+.main-nav ul {
+    margin-top: 15px;
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+}
+
+.main-nav li {
+    width: 50px;
+}
+
+.main-nav a {
+    text-decoration: none;
+    color: #858585;
+    font-size: 1.2em;
+    font-weight: 300;
+}
+
+.main-nav a:hover {
+    text-decoration: none;
+    color: #ffffff;
+}
