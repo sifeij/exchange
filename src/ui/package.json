@@ -13,7 +13,8 @@
     "tsc": "tsc",
     "tsc:w": "tsc -w",
     "typings": "typings",
-    "webdriver:update": "webdriver-manager update"
+    "webdriver:update": "webdriver-manager update",
+    "test": "tslint --project tsconfig.json"
   },
   "keywords": [],
   "author": "",
