@@ -1,0 +1,10 @@
+dependencies:
+  override:
+    - npm install: # note the colon here
+        timeout: 240
+        pwd:
+          src/ui
+    - npm test: # note the colon here
+        timeout: 240
+        pwd:
+          src/ui
