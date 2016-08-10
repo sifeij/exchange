@@ -1,19 +1,20 @@
 <div class="alert alert-info" *ngIf="!summary || summary.length===0">
-    <strong>Info!</strong> Please make a deposit.
+    <strong>Deposit</strong> Fund
 </div>
-<div class="container">
-    <div>Summary:</div>
-    <table class="col-xs-10 col-xs-offset-1" *ngIf="!!summary && summary.length>0">
+
+<div class="alert alert-info" *ngIf="!!summary && summary.length>0">
+    <h4>Summary:</h4>
+    <table class="col-xs-10 col-xs-offset-1">
         <tr *ngFor="let item of summary">
             <td>{{ item.currency | uppercase }}</td>
             <td class="pull-right">{{ item.amount | number:'.3-3' }}</td>
         </tr>
     </table>
-</div>
-<hr>
-<div class="container">
-    <div>Details:</div>
-    <table class="col-xs-10 col-xs-offset-1" *ngIf="!!transactions && transactions.length>0">
+
+    <hr>
+
+    <h4>Details:</h4>
+    <table class="col-xs-10 col-xs-offset-1">
         <tr *ngFor="let transaction of transactions">
             <td>{{ transaction.currency | uppercase }}</td>
             <td>{{ transaction.when | date:"MM/dd/yy hh:mm:ss" }}</td>
@@ -21,3 +22,4 @@
         </tr>
     </table>
 </div>
+
