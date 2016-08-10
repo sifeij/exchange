@@ -17,6 +17,12 @@ aside {
     padding-top: 40px;
 }
 
+.place-order {
+    background-color: #333;
+    color: #ddd;
+    text-align: center;
+}
+
 section {
     text-align: center;
 }
@@ -24,9 +30,11 @@ section {
 section img {
     width: 100%;
 }
+
 .nav-bar {
     background-color: #333;
 }
+
 .main-nav ul {
     margin-top: 15px;
     list-style: none;
