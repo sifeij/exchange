@@ -1,17 +1,38 @@
-<nav class="navbar navbar-default navbar-inverse main-nav">
-    <a class="navbar-brand" href="#">Exchange</a>
-    <ul>
-        <li><a href="#">Trade</a></li>
-        <li><a href="#">About</a></li>
-        <li><a href="#">Contact</a></li>
-    </ul>
-</nav>
+<header class="container-fluid">
+    <nav class="navbar main-nav">
+        <a class="navbar-brand" href="#">Exchange</a>
+        <ul>
+            <li><a href="#">Trade</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
+</header>
+
 <div class="container-fluid">
     <div class="row">
-        <summary></summary>
-    </div>
-    <hr>
-    <div class="row">
-        <deposit></deposit>
+        <section class="col-sm-8 col-sm-push-2">
+            <h4>Price Chart</h4>
+            <img src="../../images/sample-price-chart.png">
+            <hr>
+            <h4>Open Orders</h4>
+        </section>
+
+        <aside class="col-sm-2 col-sm-pull-8">
+            <summary></summary>
+            <hr>
+            <div class="row">
+                <deposit></deposit>
+            </div>
+        </aside>
+
+        <aside class="col-sm-2">
+            colum 3
+        </aside>
+        
     </div>
 </div>
+
+<footer class="container-fluid">
+    footer
+</footer>
