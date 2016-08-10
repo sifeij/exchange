@@ -41,7 +41,8 @@ export class TransactionService {
         let url = `${this.transactionUrl}/${currency}`;
         let transaction: Transaction = {
             currency: currency,
-            amount: amount
+            amount: amount,
+            when: null
         };
         console.log(JSON.stringify(transaction));
         return this.http
