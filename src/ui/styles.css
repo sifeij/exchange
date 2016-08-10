@@ -1,5 +1,9 @@
 @import "node_modules/bootstrap/dist/css/bootstrap.css";
 
+body {
+    font-family: 'Open Sans', sans-serif
+}
+
 .main-nav ul {
     margin-top: 15px;
     list-style: none;
