@@ -1,13 +1,19 @@
-// describe('QuickStart E2E Tests', function () {
+import {
+    browser,
+    element,
+    By
+} from 'protractor/globals';
 
-//     let expectedMsg = 'My First Angular 2 App';
+describe('QuickStart E2E Tests', function () {
 
-//     beforeEach(function () {
-//         browser.get('');
-//     });
+    let expectedMsg = 'My First Angular 2 App';
 
-//     it('should display: ' + expectedMsg, function () {
-//         expect(element(moveBy.css('h1')).getText()).toEqual(expectedMsg);
-//     });
-    
-// })
+
+    beforeEach(function () {
+        browser.get('http://localhost:3000');
+    });
+
+    it('should display: ' + expectedMsg, function () {
+        expect(element(By.css('h1')).getText()).toEqual(expectedMsg);
+    });
+});
