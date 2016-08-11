@@ -4,7 +4,10 @@ body {
     font-family: 'Open Sans', sans-serif
 }
 
-header, footer {
+.navbar {
+    margin-bottom: 0px;
+}
+footer {
     background-color: #333;
     color: #ddd;
     padding: 20px;
@@ -35,28 +38,6 @@ section img {
     background-color: #333;
 }
 
-.main-nav ul {
-    margin-top: 15px;
-    list-style: none;
-    display: flex;
-    flex-direction: row;
-}
-
-.main-nav li {
-    width: 60px;
-}
-
-.main-nav a {
-    text-decoration: none;
-    color: #858585;
-    font-size: 1.2em;
-    font-weight: 300;
-}
-
-.main-nav a:hover {
-    text-decoration: none;
-    color: #ffffff;
-}
 
 /* The following code is used to create same-sized columns 
    in a multi-column layout.
