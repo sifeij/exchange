@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { CORE_DIRECTIVES }   from '@angular/common';
+import { Component } from '@angular/core';
+import { CORE_DIRECTIVES } from '@angular/common';
 
 import { Transaction }        from '../models/transaction';
 import { TransactionService } from '../services/transaction-service';
@@ -10,7 +10,7 @@ import { TransactionService } from '../services/transaction-service';
   providers: [ TransactionService ],
   directives: [ CORE_DIRECTIVES ]
 })
-export class Summary implements OnInit {
+export class Summary {
 
   transactions: Transaction[];
   summary: Transaction[];
