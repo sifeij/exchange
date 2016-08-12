@@ -5,12 +5,12 @@ import { Transaction }        from '../models/transaction';
 import { TransactionService } from '../services/transaction-service';
 
 @Component({
-  selector: 'main-navbar',
-  templateUrl: 'app/components/main-navbar.html',
+  selector: 'navbar-main',
+  templateUrl: 'app/components/navbar-main.html',
   providers: [ TransactionService ],
   directives: [ CORE_DIRECTIVES ]
 })
-export class MainNavbar {
+export class NavbarMain {
 
   transactions: Transaction[];
   summary: Transaction[];
