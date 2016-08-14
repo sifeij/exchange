@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
-import { 
-    Http, 
+import {
+    Http,
     Headers,
-    RequestOptions 
+    RequestOptions
 } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
@@ -44,7 +44,7 @@ export class TransactionService {
     deposit(currency: string, amount: number): Observable<any> {
         let url = `${this.transactionUrl}/${currency}`;
         let headers = new Headers({ 'Content-Type': 'application/json' });
-        let options = new RequestOptions({ headers: headers });        
+        let options = new RequestOptions({ headers: headers });
         return this.http
                    .put(url, amount, options)
                    .catch(this.handleError);
