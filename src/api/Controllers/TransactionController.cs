@@ -39,12 +39,25 @@ namespace exchange
             return _transactionService.GetSummary();
         }
 
-        // PUT api/transaction/{currency}
-        [HttpPut("{currency}")]
-        public IActionResult Put(String product, [FromBody]Transaction transaction)
+        // PUT api/transaction/{product}
+        [HttpPut("{product}")]
+        public IActionResult Put(String product, [FromBody]Decimal amount)
         {
+            var transaction = new Transaction {
+                Currency = product, Amount = amount
+            };
+
+            // var sizeOfInt32 = sizeof(Int32);            
+            // Console.WriteLine(sizeOfInt32);
+            // var sizeOfFloat = sizeof(Single);
+            // Console.WriteLine(sizeOfFloat);   
+            // var sizeOfDouble = sizeof(Double);
+            // Console.WriteLine(sizeOfDouble);                        
+            // var sizeOfDecimal = sizeof(Decimal);
+            // Console.WriteLine(sizeOfDecimal);
+            
             var balance = _transactionService.Add(transaction);
-            return CreatedAtRoute("deposit", product);
+            return Ok();
         }
 
         readonly ITransactionService _transactionService;

@@ -21,9 +21,10 @@ export class Deposit {
 
   }
 
-  onSubmit() {
-    this.service
-        .deposit(this.currency, this.amount);
+  onSubmit(ev: any) {
     this.submitted = true;
+    this.service
+        .deposit(this.currency, this.amount)
+        .subscribe(res => console.log(res));
   }
 }

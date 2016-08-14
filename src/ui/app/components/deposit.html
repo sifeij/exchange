@@ -1,29 +1,50 @@
-<div *ngIf="!submitted">
-    <form (ngSubmit)="onSubmit()" #depositForm="ngForm">
-      <div class="form-group">
-        <label for="currency">Currency</label>
-        <select class="form-control"
-                [(ngModel)]="currency"
-                name="currency"
-                required>
-            <option *ngFor="let c of currencies" [value]="c">{{ c }}</option>
-        </select>
-      </div>
-      <div class="form-group">
-        <label for="amount">Amount</label>
-        <input type="text"
-               class="form-control"
-               [(ngModel)]="amount"
-               name="amount"
-               required>
-      </div>
+<!-- Trigger the modal with a button -->
+<button type="button" class="btn btn-info btn-block btn-md" data-toggle="modal" data-target="#depositModal">
+  DEPOSIT
+</button>
+<button type="button" class="btn btn-info btn-block btn-md" data-toggle="modal" data-target="#withdrawModal">
+  WITHDRAW
+</button>
+<!-- Modal -->
+<div id="depositModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
 
-      {{ currency }}
-      {{ amount }}
-      
-      <br>
-      <button type="submit" class="btn btn-default" [disabled]="!depositForm.form.valid">
-        Deposit
-      </button>
-    </form>
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">DEPOSIT FUNDS</h4>
+      </div>
+      <div class="modal-body">
+        <!--<form (ngSubmit)="onSubmit()" #depositForm="ngForm">-->
+            <div class="form-group">
+              <label for="currency">Currency</label>
+              <select class="form-control"
+                      [(ngModel)]="currency"
+                      name="currency"
+                      required>
+                  <option *ngFor="let c of currencies" [value]="c">{{ c }}</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="amount">Amount</label>
+              <input type="text"
+                    class="form-control"
+                    [(ngModel)]="amount"
+                    name="amount"
+                    required>
+            </div>
+            <br>
+            <!--<button type="submit" class="btn btn-default" [disabled]="!depositForm.form.valid">-->
+            <button class="btn btn-success" (click)="onSubmit()">
+              Deposit
+            </button>
+          <!--</form>-->
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
 </div>
