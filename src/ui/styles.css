@@ -41,9 +41,9 @@ footer {
 }
 
 aside {
-    background-color: #f7f7f7;
+    background-color: #222;
     text-align: center;
-    padding-top: 40px;
+    padding-top: 10px;
 }
 
 .place-order {
