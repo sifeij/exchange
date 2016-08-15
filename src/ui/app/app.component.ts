@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 
 import { NavbarMain } from './components/navbar-main';
-import { Summary } from './components/summary';
-import { Deposit } from './components/deposit';
+import { Summary }    from './components/summary';
+import { Deposit }    from './components/deposit';
 import { PlaceOrder } from './components/place-order';
 
 @Component({

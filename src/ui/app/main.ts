@@ -1,10 +1,18 @@
 import { bootstrap } from '@angular/platform-browser-dynamic';
 import { HTTP_PROVIDERS } from '@angular/http';
 
-import { AppComponent } from './app.component';
+// import { TransactionService } from './services/transaction-service';
+// import { OrderService }       from './services/order-service';
+import { AppComponent }       from './app.component';
 
-bootstrap(AppComponent,
-         [
-            HTTP_PROVIDERS
-         ]
+let appProviders = [
+    HTTP_PROVIDERS
+    // ,
+    // TransactionService,
+    // OrderService
+];
+
+bootstrap(
+    AppComponent,
+    appProviders
 ).catch(err => console.error(err));
