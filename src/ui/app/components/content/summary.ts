@@ -24,14 +24,14 @@ export class Summary {
          .get()
          .subscribe(
            (res) => this.transactions = res,
-           (err) => { console.log(err) } // format it to a more friendly message for user
+           (err) => { console.log(err); } // format it to a more friendly message for user
          );
 
     this.service
          .getSummary()
          .subscribe(
            (res) => this.summary = res,
-           (err) => { console.log(err) } // format it to a more friendly message for user
+           (err) => { console.log(err); } // format it to a more friendly message for user
          );
   }
 
