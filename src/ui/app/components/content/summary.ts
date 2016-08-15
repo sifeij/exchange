@@ -8,7 +8,6 @@ import { TransactionService } from '../../services/transaction-service';
   moduleId: module.id,
   selector: 'summary',
   templateUrl: 'summary.html',
-  providers: [ TransactionService ],
   directives: [ CORE_DIRECTIVES ]
 })
 export class Summary {
@@ -16,18 +15,24 @@ export class Summary {
   transactions: Transaction[];
   summary: Transaction[];
 
-  constructor(private service: TransactionService) {
+  constructor(public service: TransactionService) {
 
   }
 
   ngOnInit(): void {
      this.service
          .get()
-         .subscribe(res => this.transactions = res);
+         .subscribe(
+           (res) => this.transactions = res,
+           (err) => { console.log(err) } // format it to a more friendly message for user
+         );
 
     this.service
          .getSummary()
-         .subscribe(res => this.summary = res);
+         .subscribe(
+           (res) => this.summary = res,
+           (err) => { console.log(err) } // format it to a more friendly message for user
+         );
   }
 
 }

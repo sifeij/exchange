@@ -8,7 +8,6 @@ import { TransactionService } from '../../services/transaction-service';
   moduleId: module.id,
   selector: 'deposit',
   templateUrl: 'deposit.html',
-  providers: [TransactionService],
   directives: [
     CORE_DIRECTIVES
     // , NgForm

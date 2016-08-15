@@ -8,7 +8,6 @@ import { Order }        from '../../models/order';
     moduleId: module.id,
     selector: 'place-order',
     templateUrl: 'place-order.html',
-    providers: [OrderService],
     directives: [CORE_DIRECTIVES]
 })
 export class PlaceOrder {
@@ -18,7 +17,7 @@ export class PlaceOrder {
     restrictions: string[] = ['AON', 'GTC', 'DAY'];
     submitted = false;
 
-    constructor(private service: OrderService) { }
+    constructor(public service: OrderService) { }
 
     onSubmit(order: Order) {
         this.submitted = true;

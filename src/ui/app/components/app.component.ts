@@ -1,22 +1,12 @@
 import { Component } from '@angular/core';
 
-import { NavbarMain } from './header/navbar-main';
-import { FooterArea } from './footer/footer-area';
-import { Summary }    from './content/summary';
-import { Deposit }    from './content/deposit';
-import { PlaceOrder } from './content/place-order';
+import { NavbarMain, FooterArea, Content } from './index';
 
 @Component({
   moduleId: module.id,
   selector: 'exchange-app',
   templateUrl: 'app.component.html',
-  directives: [
-    NavbarMain,
-    FooterArea,
-    Summary,
-    Deposit,
-    PlaceOrder
-  ]
+  directives: [ NavbarMain, FooterArea, Content ]
 })
 export class AppComponent {
 
