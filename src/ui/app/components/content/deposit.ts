@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { CORE_DIRECTIVES } from '@angular/common';
 // import { NgForm } from '@angular/forms';
 
-import { TransactionService } from '../services/transaction-service';
+import { TransactionService } from '../../services/transaction-service';
 
 @Component({
   moduleId: module.id,

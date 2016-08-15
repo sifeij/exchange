@@ -3,7 +3,7 @@ import { HTTP_PROVIDERS } from '@angular/http';
 
 // import { TransactionService } from './services/transaction-service';
 // import { OrderService }       from './services/order-service';
-import { AppComponent }       from './app.component';
+import { AppComponent }       from './components/app.component';
 
 let appProviders = [
     HTTP_PROVIDERS

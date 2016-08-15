@@ -1,17 +1,17 @@
 import { Component } from '@angular/core';
 import { CORE_DIRECTIVES } from '@angular/common';
 
-import { Transaction }        from '../models/transaction';
-import { TransactionService } from '../services/transaction-service';
+import { Transaction }        from '../../models/transaction';
+import { TransactionService } from '../../services/transaction-service';
 
 @Component({
   moduleId: module.id,
-  selector: 'summary',
-  templateUrl: 'summary.html',
+  selector: 'navbar-main',
+  templateUrl: 'navbar-main.html',
   providers: [ TransactionService ],
   directives: [ CORE_DIRECTIVES ]
 })
-export class Summary {
+export class NavbarMain {
 
   transactions: Transaction[];
   summary: Transaction[];

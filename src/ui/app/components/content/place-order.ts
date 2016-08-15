@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { CORE_DIRECTIVES } from '@angular/common';
 
-import { OrderService } from '../services/order-service';
-import { Order }        from '../models/order';
+import { OrderService } from '../../services/order-service';
+import { Order }        from '../../models/order';
 
 @Component({
     moduleId: module.id,

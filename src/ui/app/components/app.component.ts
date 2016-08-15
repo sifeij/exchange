@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
 
-import { NavbarMain } from './components/navbar-main';
-import { Summary }    from './components/summary';
-import { Deposit }    from './components/deposit';
-import { PlaceOrder } from './components/place-order';
+import { NavbarMain } from './header/navbar-main';
+import { FooterArea } from './footer/footer-area';
+import { Summary }    from './content/summary';
+import { Deposit }    from './content/deposit';
+import { PlaceOrder } from './content/place-order';
 
 @Component({
   moduleId: module.id,
@@ -11,6 +12,7 @@ import { PlaceOrder } from './components/place-order';
   templateUrl: 'app.component.html',
   directives: [
     NavbarMain,
+    FooterArea,
     Summary,
     Deposit,
     PlaceOrder
