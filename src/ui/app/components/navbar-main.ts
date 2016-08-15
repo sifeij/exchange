@@ -5,8 +5,9 @@ import { Transaction }        from '../models/transaction';
 import { TransactionService } from '../services/transaction-service';
 
 @Component({
+  moduleId: module.id,
   selector: 'navbar-main',
-  templateUrl: 'app/components/navbar-main.html',
+  templateUrl: 'navbar-main.html',
   providers: [ TransactionService ],
   directives: [ CORE_DIRECTIVES ]
 })

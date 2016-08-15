@@ -5,8 +5,9 @@ import { OrderService } from '../services/order-service';
 import { Order }        from '../models/order';
 
 @Component({
+    moduleId: module.id,
     selector: 'place-order',
-    templateUrl: 'app/components/place-order.html',
+    templateUrl: 'place-order.html',
     providers: [OrderService],
     directives: [CORE_DIRECTIVES]
 })

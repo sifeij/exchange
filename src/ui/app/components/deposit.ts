@@ -5,8 +5,9 @@ import { CORE_DIRECTIVES } from '@angular/common';
 import { TransactionService } from '../services/transaction-service';
 
 @Component({
+  moduleId: module.id,
   selector: 'deposit',
-  templateUrl: 'app/components/deposit.html',
+  templateUrl: 'deposit.html',
   providers: [TransactionService],
   directives: [
     CORE_DIRECTIVES
