@@ -14,10 +14,10 @@ export class TransactionService {
 
     private transactionUrl = `${BASE_URI}/api/transaction`;
 
-    constructor(private http: Http) {}
+    constructor(private _http: Http) {}
 
     get(): Observable<Transaction[]> {
-        return this.http
+        return this._http
                    .get(this.transactionUrl)
                    .map(t => t.json())
                    .catch(this.handleError);
@@ -25,7 +25,7 @@ export class TransactionService {
 
     getSummary(): Observable<Transaction[]> {
         let url = `${this.transactionUrl}/summary`;
-        return this.http
+        return this._http
                    .get(url)
                    .map(t => t.json())
                    .catch(this.handleError);
@@ -33,7 +33,7 @@ export class TransactionService {
 
     getByCurrency(currency: string): Observable<Transaction> {
         let url = `${this.transactionUrl}/{transaction.currency}`;
-        return this.http
+        return this._http
                    .get(url)
                    .map(t => t.json)
                    .catch(this.handleError);
@@ -43,7 +43,7 @@ export class TransactionService {
         let url = `${this.transactionUrl}/${currency}`;
         let headers = new Headers({ 'Content-Type': 'application/json' });
         let options = new RequestOptions({ headers: headers });
-        return this.http
+        return this._http
                    .put(url, amount, options)
                    .catch(this.handleError);
     }

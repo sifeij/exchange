@@ -14,10 +14,10 @@ export class OrderService {
 
     private orderUrl = `${BASE_URI}/api/order`;
 
-    constructor(private http: Http) { }
+    constructor(private _http: Http) { }
 
     get(): Observable<Order[]> {
-        return this.http
+        return this._http
             .get(this.orderUrl)
             .map(t => t.json())
             .catch(this.handleError);
@@ -26,7 +26,7 @@ export class OrderService {
     placeOrder(order: Order): Observable<any> {
         let headers = new Headers({ 'Content-Type': 'application/json' });
         let options = new RequestOptions({ headers: headers });
-        return this.http
+        return this._http
             .put(this.orderUrl, order, options)
             .catch(this.handleError);
     }
